@@ -106,10 +106,25 @@ body {
     height: 180px;
     margin: 0 auto 2rem;
     position: relative;
+    z-index: 10;
+}
+
+.profile-container::after {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    background: linear-gradient(45deg, var(--accent-glow), var(--accent-secondary));
     border-radius: 50%;
-    padding: 5px;
-    background: linear-gradient(135deg, var(--accent-glow), var(--accent-secondary));
-    box-shadow: 0 0 30px var(--accent-glow);
+    z-index: -1;
+    opacity: 0.5;
+    filter: blur(10px);
+    transition: 0.5s;
+}
+
+.profile-container:hover::after {
+    opacity: 1;
+    filter: blur(15px);
+    transform: scale(1.05);
 }
 
 .profile-img {
@@ -118,6 +133,13 @@ body {
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid var(--bg-dark);
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.profile-container:hover .profile-img {
+    transform: scale(1.02);
+    border-color: var(--accent-secondary);
 }
 
 .hero-subtitle {
