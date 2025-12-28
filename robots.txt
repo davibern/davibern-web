@@ -1,0 +1,11 @@
+# robots.txt para davibern.dev
+
+# Permitir acceso a todos los bots
+User-agent: *
+Allow: /
+
+# Bloquear acceso a directorios del sistema
+Disallow: /.git/
+
+# Ubicación del sitemap
+Sitemap: https://davibern.dev/sitemap.xml
